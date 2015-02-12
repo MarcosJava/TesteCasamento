@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+
+<ui:composition>
+
+
+ <h:form id="formMenu">
+<p:megaMenu orientation="horizontal" style="margin-top:20px">
+	
+	<p:menuitem value="Home" outcome="system" icon="ui-icon-home"  />
+
+    <p:submenu label="Localidade" icon="ui-icon-document">
+        <p:column>
+            <p:submenu label="Cadastro">
+                <p:menuitem value="Localidade" outcome="localidade" />
+            </p:submenu>
+        </p:column>
+
+ 
+        <p:column>
+            <p:graphicImage library="img" name="comunidade.jpg" width="200" alt="localidade"/>
+        </p:column>
+    </p:submenu>
+ 
+    <p:submenu label="Convidados" icon="ui-icon-document">
+ 
+        <p:column>
+            <p:submenu label="Cadastro">
+                <p:menuitem value="Cadastrar seu convidado" url="#" />
+            </p:submenu>
+            
+            <p:submenu label="Buscar">
+                <p:menuitem value="Seus Convidados" url="#" />
+                <p:menuitem value="Todos os Convidados" url="#" />
+            </p:submenu>
+        </p:column>
+ 		
+ 		 <p:column>
+            <p:graphicImage library="img" name="casais.png" width="200" alt="cadastro"/>
+        </p:column>
+      
+    </p:submenu>
+ 
+   
+    <p:menuitem value="Logout" action="#{loginBean.logout()}" icon="ui-icon-close"  />
+</p:megaMenu>
+
+</h:form>
+</ui:composition>
+</html>
+
