@@ -22,7 +22,7 @@ public class LoginBean {
 	@Inject
 	private UsuarioRegras usuarioRegras;
 	
-	private String nomeUsuario;
+	private String login;
 	private String senha;
 	
 	
@@ -31,10 +31,10 @@ public class LoginBean {
 		
 		FacesContext context = FacesContext.getCurrentInstance();
 		
-		boolean resultado = usuarioRegras.verificarUsuario(this.nomeUsuario, this.senha);
+		boolean resultado = usuarioRegras.verificarUsuario(this.login, this.senha);
 		
 		if(resultado){			
-			this.usuarioSession.setNome(this.nomeUsuario);
+			this.usuarioSession.setLogin(this.login);
 			this.usuarioSession.setDataLogin(new Date());
 			
 			return "protegido/usuario/system?faces-redirect=true";
@@ -55,14 +55,12 @@ public class LoginBean {
 		return "/login?faces-redirect=true";
 	}
 
-	public String getNomeUsuario() {
-		return nomeUsuario;
+	public String getLogin() {
+		return login;
 	}
-
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+	public void setLogin(String login) {
+		this.login = login;
 	}
-
 	public String getSenha() {
 		return senha;
 	}

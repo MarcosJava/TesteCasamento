@@ -1,0 +1,522 @@
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+							/*DADOS DIVERSOS*/
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/*@@@@@ ID @@@@*/
+.input-Id{     
+    border-radius:4px !important;
+    -moz-border-radius:4px !important;
+    -webkit-border-radius:4px !important;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:100px;
+}
+.input-Id:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ CPF / RG @@@@@*/
+.input-CPF-RG{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:150px;
+}
+.input-CPF-RG:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+
+/*@@@@@ TEXT-AREA @@@@*/
+.input-TextArea{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:400px
+}
+.input-TextArea:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+
+/*@@@@@ NOME @@@@*/
+.input-Nome{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:200px
+}
+.input-Nome:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ SOBRENOME @@@@*/
+.input-SobreNome{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:350px
+}
+.input-Nome:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ SELECTONMENU @@@@*/
+.input-SelecOneMenu{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    /*width:350px
+    height: 50px;*/
+}
+.input-SelecOneMenu:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ DATA @@@@*/
+.input-Data{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:100px
+}
+.input-Data:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ ENDERECO @@@@*/
+.input-Endereco{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:350px
+}
+.input-Endereco:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ NUMERO @@@@*/
+.input-Numero{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:100px
+}
+.input-Numero:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ BAIRRO @@@@*/
+.input-Bairro{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:200px
+}
+.input-Bairro:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ CIDADE @@@@*/
+.input-Cidade{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:250px
+}
+.input-Cidade:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ CEP @@@@*/
+.input-Cep{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:90px;
+}
+.input-Cep:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+
+/*@@@@@ TEL @@@@*/
+.input-Tel{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:100px;
+}
+.input-Tel:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ TEL @@@@*/
+.input-DDD{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:50px;
+}
+.input-DDD:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ EMAIL/SITE/FACE @@@@*/
+.input-Email-Site-Face{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:400px;
+}
+.input-Email-Site-Face:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ NOME CARTÃO @@@@*/
+.input-NomeCartao{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:350px;
+}
+.input-NomeCartao:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ BANDEIRA CARTÃO @@@@*/
+.input-BandeiraCartao{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:100px;
+}
+.input-BandeiraCartao:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ BANCO CARTÃO @@@@*/
+.input-BancoCartao{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:100px;
+}
+.input-BancoCartao:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ NUMERO CONTA @@@@*/
+.input-NumeroConta{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:100px;
+}
+.input-NumeroConta:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ Numero Cartao @@@@*/
+.input-NumeroCartao{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:200px;
+}
+.input-NumeroCartao:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ COD SEGURANÇA @@@@*/
+.input-CodSeguranca{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:50px;
+}
+.input-CodSeguranca:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@ VALIDADE @@@@*/
+.input-Validade{     
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #ffffff/*cccccc*/; 
+    border:1px solid #000000;
+    width:75px;
+}
+.input-Validade:hover{ 
+    background: #ffffff; 
+    border:1px solid #990000;
+}
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+							/*DADOS TABELAS*/
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/*@@@@@ TABLE @@@@*/
+.table100Porcento{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:1px solid #000000/*0px*/;
+	background: #FFFFFF;
+	width: 100%;
+}
+.table50{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:1px solid #000000/*0px*/;
+	background: #FFFFFF;
+	width: 400px;
+}
+.table600{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:1px solid #000000/*0px*/;
+	background: #FFFFFF;
+	width: 600px;
+}
+.table800{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:1px solid #000000/*0px*/;
+	background: #FF1493;
+	width: 800px;
+}
+/*@@@@@ COLUMN @@@@*/
+.table-Column-Cliente{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 300px;
+}
+.table-Column-Plano{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 250px;
+}
+.table-Column-Id{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 80px;
+}
+.table-Column-Data{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 100px;
+	text-align: left;
+}
+.table-Column-Valor{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 100px;
+}
+.table-Column-Status{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 150px;
+}
+.table-Column-ButtonUnico{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 50px;
+}
+.table-Column-ButtonDuplo{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:/*1px solid #000000*/0px;
+	background: #F0FFFF;
+	width: 100px;
+}
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+							/*DADOS IMAGNES*/
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+.graphicImage{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    /*background: #ffffffcccccc*/; 
+    border:1px solid #000000/*0px*/;
+}

@@ -7,9 +7,11 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
 
+import br.com.mfs.casamento.interceptadores.BancoDadosMysql;
+
 public class GenericDAO<T, ID extends Serializable> {
 
-	@Inject
+	@Inject @BancoDadosMysql
 	protected EntityManager em;
 	
 	private Class<T> entityClass;
@@ -24,10 +26,7 @@ public class GenericDAO<T, ID extends Serializable> {
 	
 	
 	public void save(T entity) {
-		System.out.println("Salvando");
-		em.getTransaction().begin();
 		em.persist(entity);
-		em.getTransaction().commit();
 	}
 	
 	public void delete(Object id, Class<T> classe) {
@@ -37,9 +36,7 @@ public class GenericDAO<T, ID extends Serializable> {
 	
 	
 	public T update(T entity) {
-		em.getTransaction().begin();
 		entity = em.merge(entity);
-		em.getTransaction().commit();
 		return entity;
 	}
 	

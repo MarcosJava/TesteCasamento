@@ -20,7 +20,7 @@
 								 value="#{localidadeMB.localidade.nomeLocalidade}" 
 								 onkeyup="this.value = this.value.toUpperCase();" 
 								 validatorMessage="Apenas letra e sem acentuações e ç">
-						<f:validateRegex pattern="[a-zA-Z ]+ " />
+						<f:validateRegex pattern="[a-zA-Z ]+" />
 						<p:clientValidator event="keyup" />
 					</p:inputText>
 					<p:message for="localidade"/>

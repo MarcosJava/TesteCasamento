@@ -14,8 +14,10 @@ import javax.persistence.EntityTransaction;
 public class TransactionalInterceptador implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@Inject
-	private EntityManager manager;
+	
+	
+	
+	private @Inject @BancoDadosMysql EntityManager manager;
 
 	@AroundInvoke
 	public Object invoke(InvocationContext context) throws Exception {
@@ -24,20 +26,23 @@ public class TransactionalInterceptador implements Serializable {
 		try {
 			
 			if (!trx.isActive()) {
-				System.out.println("Transação não estar ativa");
+//				System.out.println("Transação não estar ativa");
+//				trx.begin();
+//				System.out.println("Transação aberta");
+//				trx.rollback();
+//				System.out.println("Rollback");
+//				trx.begin();
+//				System.out.println("Transação aberta");
+//				criador = true;
 				trx.begin();
-				System.out.println("Transação aberta");
-				trx.rollback();
-				System.out.println("Rollback");
-				trx.begin();
-				System.out.println("Transação aberta");
 				criador = true;
 			} else {
 				trx.begin();
 			}
 			
-			return context.proceed();
-			
+			Object resultado = context.proceed();
+			trx.commit();
+			return resultado;
 		} catch (Exception e) {
 			System.out.println("Deu pau");
 			if (trx != null && criador) {

@@ -21,15 +21,11 @@ public class LocalidadeMB implements Serializable{
 	@Inject
 	private LocalidadeRegra localidadeRegra;
 	
+	@Inject
 	private Localidade localidade;
+	
 	private List<Localidade> localidades = new ArrayList<Localidade>();
 	
-	
-	
-	public LocalidadeMB() {
-		super();
-		localidade = new Localidade();
-	}
 	
 	public void cadastrar(){
 		
@@ -37,13 +33,13 @@ public class LocalidadeMB implements Serializable{
 		
 		
 		try {			
-			localidade.setIdLocalidade(6);
+			
 			System.out.println(localidade.getNomeLocalidade());
 			localidadeRegra.salvarLocalidade(localidade);
 
-			localidade = new Localidade();
+			//localidade = new Localidade();
 			
-			context.addMessage(null, new FacesMessage("Lançamento salvo com sucesso!"));
+			context.addMessage(null, new FacesMessage("Localidade salvo com sucesso!"));
 		} catch (NegocioException e) {
 			FacesMessage mensagemErro = new FacesMessage(e.getMessage());
 			mensagemErro.setSeverity(FacesMessage.SEVERITY_ERROR);
@@ -52,13 +48,20 @@ public class LocalidadeMB implements Serializable{
 	}
 	
 	public void excluir(Localidade localidade){
-		try {
 		
-			System.out.println(localidade.getNomeLocalidade());
-			localidade = new Localidade();
+		FacesContext context = FacesContext.getCurrentInstance();
+		
+		try {
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+			
+			this.localidadeRegra.deletarLocalidade(localidade);
+			localidade = new Localidade();
+			context.addMessage(null, new FacesMessage("Localidade excluida com sucesso"));
+			
+		} catch (NegocioException e) {
+			FacesMessage mensagemErro = new FacesMessage(e.getMessage());
+			mensagemErro.setSeverity(FacesMessage.SEVERITY_ERROR);
+			context.addMessage(null, mensagemErro);
 		}
 	}
 	

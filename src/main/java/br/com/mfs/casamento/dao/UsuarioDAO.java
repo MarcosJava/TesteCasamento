@@ -1,15 +1,11 @@
 package br.com.mfs.casamento.dao;
 
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import br.com.mfs.casamento.model.Usuario;
 
-public class UsuarioDAO {
+public class UsuarioDAO extends GenericDAO<Usuario, Integer> {
 	
-	@Inject
-	private EntityManager em;
 	
 	public boolean checandoLoginSenha(String nomeUsuario, String senha){
 		
@@ -33,4 +29,25 @@ public class UsuarioDAO {
 			return false;
 		}
 	}
+	
+	
+	
+	public Usuario buscandoUsuarioPorOauth(String oauth) {
+		return super.em.createNamedQuery(Usuario.VERIFICAR_OAUTH, Usuario.class)
+						.setParameter("oauth", oauth)
+						.getSingleResult();
+	}
+
+	
+	public Usuario buscandoUsuarioPorLogin(String login) {
+		return super.em.createNamedQuery(Usuario.VERIFICAR_LOGIN, Usuario.class).setParameter("login", login).getSingleResult();
+	}
+
+	
+	public Usuario buscandoCasalDoUsuario(String login) {
+		return super.em.createNamedQuery(Usuario.TRAZER_CASAL, Usuario.class).setParameter("login", login).getSingleResult();
+	}
+	
+	
+	
 }
