@@ -5,15 +5,11 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.hibernate.HibernateException;
-
 import br.com.mfs.casamento.dao.ConvidadosDAO;
 import br.com.mfs.casamento.exception.NegocioException;
 import br.com.mfs.casamento.interceptadores.BancoDadosMysql;
 import br.com.mfs.casamento.interceptadores.Transactional;
 import br.com.mfs.casamento.model.Convidados;
-
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 public class ConvidadosRegra implements Serializable {
 	
@@ -44,7 +40,7 @@ public class ConvidadosRegra implements Serializable {
 	}
 	
 	@Transactional @BancoDadosMysql
-	public void exclui(Convidados convidados){
+	public void exclui(Convidados convidados) throws NegocioException{
 		convidadosDAO.delete(convidados.getIdConvidado(), Convidados.class);
 	}
 	
