@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.mfs.casamento.managed.UsuarioSessionBean;
 
-@WebFilter("*.xhtml")
+@WebFilter("/*")
 public class AutorizacaoFilter implements Filter {
 	
 	@Inject

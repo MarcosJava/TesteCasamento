@@ -14,33 +14,56 @@
 				
 				
 				<h:form id="formInpt">
-				<p:messages id="msgs"/>
-				<p:panelGrid columns="2">
+				<p:messages id="msgResposta"/>
+				<h:panelGrid columns="3">
 				
 					<f:facet name="header"> Cadastrar Convidados</f:facet>
 				
-					<h:outputLabel value="Nome do Convidado" />
-					<h:inputText value="#{convidadosMB.convidados.nome}" onkeyup="this.value = this.value.toUpperCase();"/>
+					<p:outputLabel for="nomeConvidado" value="Nome do Convidado" />
+					<p:inputText id="nomeConvidado" 
+					             value="#{cadastrarConvidadoBean.convidados.nome}" 
+					             onkeyup="this.value = this.value.toUpperCase();" 
+					             required="true" 
+					             requiredMessage="Informe o nome do convidado"
+					             maxlength="50"
+					             validatorMessage="Apenas letra sem acentuação">
 					
-					<h:outputLabel value="Padrinho" for="padrinho"/>
-					<p:selectOneRadio id="padrinho" value="#{convidadosMB.convidados.padrinho}" rendered="true" requiredMessage="Necessario escolher uma opção para o padrinho">
+						<f:validateRegex pattern="[a-zA-ZÇ ]+" />
+						<p:clientValidator event="keyup" />
+					
+					</p:inputText>
+					             
+					<p:message for="nomeConvidado" showDetail="true" />
+					
+					<p:outputLabel value="Padrinho" for="padrinho"/>
+					<p:selectOneRadio id="padrinho" 
+					                  value="#{cadastrarConvidadoBean.convidados.padrinho}" 
+					                  required="true" 
+					                  requiredMessage="Necessario escolher uma opção para o padrinho">
 						<f:selectItem itemLabel="Sim" itemValue="s"/>
 						<f:selectItem itemLabel="Não" itemValue="n"/>
 					</p:selectOneRadio>
+					<p:message for="padrinho" />
 					
-					<h:outputLabel value="Localidade" />
-					<p:selectOneMenu value="#{convidadosMB.localidadeSelecionada}" required="true" requiredMessage="Necessario escolher uma localidade">
-						<f:selectItem itemLabel="Escolha uma opcao" itemValue=""/>
+					<p:outputLabel for="localidade" value="Localidade" />
+					<p:selectOneMenu id="localidade" 
+					                 value="#{cadastrarConvidadoBean.localidadeSelecionada}" 
+					                 required="true" 
+					                 requiredMessage="Necessario escolher uma localidade">
+					                 
+						<f:selectItem itemLabel="Escolha uma opcao" itemValue="" noSelectionOption="true"/>
 						<f:selectItems value="#{convidadosMB.localidades}" 
 									   var="local" 
 									   itemLabel="#{local.nomeLocalidade}" 
 									   itemValue="#{local.idLocalidade}"  />
 					</p:selectOneMenu>
+					<p:message for="localidade" />
 					
 					
-					
-					<p:commandButton value="Salvar" action="#{convidadosMB.salvar}" update="msgs" />
-				</p:panelGrid>
+					<p:commandButton value="Salvar" 
+									 action="#{cadastrarConvidadoBean.salvar}" 
+									 update="formInpt" />
+				</h:panelGrid>
 				</h:form>
 				
 				
