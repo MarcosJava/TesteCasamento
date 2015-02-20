@@ -55,6 +55,10 @@ public class CadastrarConvidadoBean {
 			
 			convidadosRegra.salvar(convidados);
 			
+			//Limpando
+			convidados = new Convidados();
+			localidadeSelecionada = null;
+			
 			fc.addMessage("msgResposta", new FacesMessage(FacesMessage.SEVERITY_INFO, "Convidados adicionado com sucesso", "Convidados adicionado com sucesso"));
 			
 		} catch (NegocioException e) {

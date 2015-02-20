@@ -30,10 +30,9 @@
 					
 						<f:validateRegex pattern="[a-zA-ZÇ ]+" />
 						<p:clientValidator event="keyup" />
-					
-					</p:inputText>
-					             
+					</p:inputText>					             
 					<p:message for="nomeConvidado" showDetail="true" />
+					
 					
 					<p:outputLabel value="Padrinho" for="padrinho"/>
 					<p:selectOneRadio id="padrinho" 
@@ -49,8 +48,7 @@
 					<p:selectOneMenu id="localidade" 
 					                 value="#{cadastrarConvidadoBean.localidadeSelecionada}" 
 					                 required="true" 
-					                 requiredMessage="Necessario escolher uma localidade">
-					                 
+					                 requiredMessage="Necessario escolher uma localidade">					          
 						<f:selectItem itemLabel="Escolha uma opcao" itemValue="" noSelectionOption="true"/>
 						<f:selectItems value="#{convidadosMB.localidades}" 
 									   var="local" 

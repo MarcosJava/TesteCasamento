@@ -29,14 +29,11 @@ public class LocalidadeMB implements Serializable{
 	
 	public void cadastrar(){
 		
-		FacesContext context = FacesContext.getCurrentInstance();
+		FacesContext context = FacesContext.getCurrentInstance();	
 		
-		
-		try {			
-			
+		try {					
 			System.out.println(localidade.getNomeLocalidade());
 			localidadeRegra.salvarLocalidade(localidade);
-
 			//localidade = new Localidade();
 			
 			context.addMessage(null, new FacesMessage("Localidade salvo com sucesso!"));
@@ -52,8 +49,7 @@ public class LocalidadeMB implements Serializable{
 		FacesContext context = FacesContext.getCurrentInstance();
 		
 		try {
-			
-			
+					
 			this.localidadeRegra.deletarLocalidade(localidade);
 			localidade = new Localidade();
 			context.addMessage(null, new FacesMessage("Localidade excluida com sucesso"));

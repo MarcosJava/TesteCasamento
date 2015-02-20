@@ -17,7 +17,7 @@
 				
 			
 				<h:form id="formInpt">
-				<p:dataTable value="#{convidadosMB.lstConvidados}" 
+				<p:dataTable value="#{buscarConvidadosCasalBean.lstConvidados}" 
 							 var="convidado"
 							 paginator="true"
 							 rows="5" 
@@ -26,7 +26,7 @@
 							 
 							 
 							 <f:facet name="header"> 
-							   Total de Convidados do Casal:	#{convidadosMB.qtdConvidados}
+							   Total de Convidados do Casal:	<h:outputText value="#{buscarConvidadosCasalBean.qtdConvidados}" />
 							 </f:facet>
 							 
 					<p:column filterBy="#{convidado.nome}" headerText="Nome">
