@@ -50,7 +50,7 @@
 					                 required="true" 
 					                 requiredMessage="Necessario escolher uma localidade">					          
 						<f:selectItem itemLabel="Escolha uma opcao" itemValue="" noSelectionOption="true"/>
-						<f:selectItems value="#{convidadosMB.localidades}" 
+						<f:selectItems value="#{cadastrarConvidadoBean.localidades}" 
 									   var="local" 
 									   itemLabel="#{local.nomeLocalidade}" 
 									   itemValue="#{local.idLocalidade}"  />

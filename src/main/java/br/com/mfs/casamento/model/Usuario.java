@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -21,6 +22,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="usuario", schema="casamento")
+
+
 @NamedQueries({
 	@NamedQuery(name="Usuario.verificarOauth", query="SELECT u FROM Usuario u WHERE u.oauth=:oauth"),
 	@NamedQuery(name="Usuario.verificarLogin", query="SELECT u FROM Usuario u WHERE u.login=:login"),
@@ -28,7 +31,8 @@ import javax.persistence.Table;
 	@NamedQuery(name="Usuario.verificarLoginESenha", query="SELECT u.oauth FROM Usuario u WHERE u.login=:login AND u.senha=:senha")
 })
 public class Usuario implements Serializable{
-
+	
+	public final static String VERIFICAR_CASAL = "Usuario.verificarCasal";
 	public final static String VERIFICAR_OAUTH = "Usuario.verificarOauth";
 	public final static String VERIFICAR_LOGIN = "Usuario.verificarLogin";
 	public final static String TRAZER_CASAL = "Usuario.trazerCasal";

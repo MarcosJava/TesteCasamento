@@ -1,5 +1,7 @@
 package br.com.mfs.casamento.managed;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -35,6 +37,8 @@ public class CadastrarConvidadoBean {
 	
 	private String localidadeSelecionada;
 	
+	private List<Localidade> localidades;
+	
 	
 	@PostConstruct
 	public void init(){
@@ -68,6 +72,10 @@ public class CadastrarConvidadoBean {
 	}
 
 	
+
+	public List<Localidade> getLocalidades() {
+		return localidades = localidadeRegra.trazerTodos();
+	}
 
 	public String getLocalidadeSelecionada() {
 		return localidadeSelecionada;

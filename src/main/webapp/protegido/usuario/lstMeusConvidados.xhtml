@@ -41,7 +41,7 @@
 					
 					<p:column>
 						<p:commandButton value="Excluir" actionListener="#{buscarConvidadosMeusBean.deletar(convidado)}" update=":formInpt">	
-							<p:confirm header="Confirmação" message="Deseja deletar o comembro ?" icon="ui-icon-alert" /> 									 
+							<p:confirm header="Confirmação" message="Deseja deletar o comembro ?" icon="ui-icon-alert" update=":formInpt" /> 									 
 						</p:commandButton>
 						
 						<p:confirmDialog global="true" showEffect="fade" hideEffect="explode">

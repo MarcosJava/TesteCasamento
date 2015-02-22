@@ -24,6 +24,13 @@
 
 
 	<dependencies>
+		
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
 
 		<!-- Servlet -->
 		<dependency>
@@ -95,7 +102,13 @@
 			<artifactId>itext</artifactId>
 			<version>2.1.7</version>
 		</dependency>
-
+		
+		<!-- Apache Commons -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
 
 	</dependencies>
 </project>

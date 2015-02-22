@@ -51,7 +51,12 @@ public class LocalidadeRegra implements Serializable{
 	
 	@Transactional @BancoDadosMysql
 	public void deletarLocalidade(Localidade localidade) throws NegocioException {		
-		this.localidadeDAO.delete(localidade.getIdLocalidade(), Localidade.class);
+		try {
+			this.localidadeDAO.delete(localidade.getIdLocalidade(), Localidade.class);
+		} catch (Exception e) {
+			throw new NegocioException("Existe convidados na localidade , não pode ser excluida");
+		}
+		
 		
 	}
 	

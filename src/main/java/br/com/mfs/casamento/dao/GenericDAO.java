@@ -29,7 +29,7 @@ public class GenericDAO<T, ID extends Serializable> {
 		em.persist(entity);
 	}
 	
-	public void delete(Object id, Class<T> classe) {
+	public void delete(Object id, Class<T> classe) throws Exception {
 		T entityToBeRemoved = em.getReference(classe, id);
 		em.remove(entityToBeRemoved);
 	}

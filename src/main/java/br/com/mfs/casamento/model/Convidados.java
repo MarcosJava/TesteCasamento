@@ -29,6 +29,7 @@ import javax.persistence.Table;
 public class Convidados implements Serializable, Comparable<Convidados>{
 	
 	public static final String TRAZER_TODOS_DO_USUARIO="Convidados.buscarTodosUsuario";
+	public static final String TRAZER_TODOS_DO_CASAL="Convidados.buscarTodosCasal";
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

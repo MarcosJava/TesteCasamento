@@ -1,5 +1,6 @@
 package br.com.mfs.casamento.managed;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -14,7 +15,7 @@ import br.com.mfs.casamento.model.Convidados;
 
 @Named
 @RequestScoped
-public class BuscarConvidadosMeusBean {
+public class BuscarConvidadosMeusBean implements Serializable{
 
 	@Inject
 	private ConvidadosRegra convidadosRegra;

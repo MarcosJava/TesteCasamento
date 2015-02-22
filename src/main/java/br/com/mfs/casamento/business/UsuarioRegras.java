@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.inject.Inject;
 
 import br.com.mfs.casamento.dao.UsuarioDAO;
+import br.com.mfs.casamento.exception.NegocioException;
 import br.com.mfs.casamento.interceptadores.BancoDadosMysql;
 import br.com.mfs.casamento.interceptadores.Transactional;
 import br.com.mfs.casamento.model.Usuario;
@@ -44,6 +45,5 @@ public class UsuarioRegras implements Serializable{
 	public Usuario buscarCasalDoUsuario(Usuario u){
 		return usuarioDAO.buscandoCasalDoUsuario(u.getLogin());
 	}
-	
 	
 }

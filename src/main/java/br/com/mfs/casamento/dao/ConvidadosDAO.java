@@ -16,10 +16,16 @@ public class ConvidadosDAO extends GenericDAO<Convidados, Integer>{
 	}
 
 	
-	public List<String> buscarTodosConvidadosDoCasal(String login) {
-		Query query = super.em.createNativeQuery("select * from vw_convidados_casal where login=:login order by convidados");
-		query.setParameter("login", login);
+	
+	public List<Convidados> buscarTodosConvidadosDoCasal(String login) {
+				
+		String sql = "select * from convidados c inner join usuario u where (u.login=? and c.id_usuario = u.id_usuario)  or (u.login=? and c.id_usuario = u.casal)";
+
+		Query query = em.createNativeQuery(sql, Convidados.class)
+				        .setParameter(1, login)
+				        .setParameter(2, login);
 		return query.getResultList();
+
 	}
 
 

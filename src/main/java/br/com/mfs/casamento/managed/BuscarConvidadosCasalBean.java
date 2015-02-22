@@ -1,18 +1,22 @@
 package br.com.mfs.casamento.managed;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.mfs.casamento.business.ConvidadosRegra;
 import br.com.mfs.casamento.business.UsuarioRegras;
+import br.com.mfs.casamento.exception.NegocioException;
 import br.com.mfs.casamento.model.Convidados;
 
 @Named("buscarConvidadosCasalBean")
-@RequestScoped
-public class BuscarConvidadosCasalBean {
+@ViewScoped
+public class BuscarConvidadosCasalBean implements Serializable {
 
 	@Inject
 	private ConvidadosRegra convidadosRegra;
@@ -25,11 +29,27 @@ public class BuscarConvidadosCasalBean {
 	@Inject
 	private UsuarioRegras usuarioRegras;
 	
-	public List<Convidados> getLstConvidados() {		
-		lstConvidados = convidadosRegra.buscarTodosDoCasal(usuarioSessao.getLogin());
-		System.out.println(lstConvidados.size());
-		lstConvidados.addAll(convidadosRegra.buscarTodosDoCasal(usuarioRegras.buscarCasalDoUsuario(usuarioSessao.getUsuario()).getLogin()));
-		System.out.println(lstConvidados.size());
+	@PostConstruct
+	public void init(){
+		
+		verificandoCasal();
+		
+	}
+	
+	public void verificandoCasal(){
+
+		String login = usuarioSessao.getLogin();
+		
+		
+		if(usuarioSessao.getUsuario().getCasal() == null){
+			lstConvidados = new ArrayList<Convidados>();
+		} else {
+			lstConvidados = convidadosRegra.buscarTodosDoCasal(login);
+		}
+		
+	}
+	
+	public List<Convidados> getLstConvidados() {				
 		return lstConvidados;
 	}
 	

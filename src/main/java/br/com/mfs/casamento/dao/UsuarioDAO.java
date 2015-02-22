@@ -1,6 +1,8 @@
 package br.com.mfs.casamento.dao;
 
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
 import br.com.mfs.casamento.model.Usuario;
 
@@ -47,6 +49,7 @@ public class UsuarioDAO extends GenericDAO<Usuario, Integer> {
 	public Usuario buscandoCasalDoUsuario(String login) {
 		return super.em.createNamedQuery(Usuario.TRAZER_CASAL, Usuario.class).setParameter("login", login).getSingleResult();
 	}
+	
 	
 	
 	

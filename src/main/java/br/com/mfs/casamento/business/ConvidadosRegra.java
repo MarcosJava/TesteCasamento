@@ -41,7 +41,11 @@ public class ConvidadosRegra implements Serializable {
 	
 	@Transactional @BancoDadosMysql
 	public void exclui(Convidados convidados) throws NegocioException{
-		convidadosDAO.delete(convidados.getIdConvidado(), Convidados.class);
+		try {
+			convidadosDAO.delete(convidados.getIdConvidado(), Convidados.class);
+		} catch (Exception e) {
+			throw new NegocioException("Não pode excluir convidado.");
+		}
 	}
 	
 	public List<Convidados> buscarTudo(){
@@ -49,11 +53,9 @@ public class ConvidadosRegra implements Serializable {
 	}
 	
 	public List<Convidados> buscarTodosDoCasal(String login){
-		return convidadosDAO.buscarTodosDoUsuario(login);
-	}
-	
-	public List<String> buscarTodosConvidadosDoCasal(String login){
 		return convidadosDAO.buscarTodosConvidadosDoCasal(login);
 	}
+	
+	
 	
 }
