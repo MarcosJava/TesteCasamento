@@ -27,9 +27,14 @@ public class BuscarConvidadosMeusBean implements Serializable{
 	
 	
 	public List<Convidados> getLstConvidados() {		
-		lstConvidados = convidadosRegra.buscarTodosDoCasal(usuarioSessao.getLogin());
-		System.out.println(lstConvidados.size());
-		return lstConvidados;
+		try {
+			lstConvidados = convidadosRegra.buscarTodosDoUsuario(usuarioSessao.getLogin());
+			System.out.println("Total de MEUS convidados = " + lstConvidados.size());
+			return lstConvidados;
+		} catch (NegocioException e) {
+			return null;
+		}
+		
 	}
 	
 

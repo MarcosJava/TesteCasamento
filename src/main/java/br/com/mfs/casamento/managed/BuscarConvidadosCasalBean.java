@@ -2,6 +2,7 @@ package br.com.mfs.casamento.managed;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -29,6 +30,8 @@ public class BuscarConvidadosCasalBean implements Serializable {
 	@Inject
 	private UsuarioRegras usuarioRegras;
 	
+	private Integer qtdConvidados;
+	
 	@PostConstruct
 	public void init(){
 		
@@ -49,11 +52,15 @@ public class BuscarConvidadosCasalBean implements Serializable {
 		
 	}
 	
-	public List<Convidados> getLstConvidados() {				
+	public List<Convidados> getLstConvidados() {
+		Collections.sort(lstConvidados);
+		
 		return lstConvidados;
 	}
 	
 	public Integer getQtdConvidados(){
-		return getLstConvidados().size();
+		this.qtdConvidados = getLstConvidados().size();
+		System.out.println("Total de TODOS os convidados = " + qtdConvidados);
+		return qtdConvidados;
 	}
 }

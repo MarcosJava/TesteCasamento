@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+
+	<ui:composition template="/tamplates/tamplateUser.xhtml">
+	
+			<ui:define name="center">
+				
+				<!-- start: Content CENTER -->
+				<div id="content" class="span10">
+				
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home"></i>
+							<a href="index.html">Home</a> 
+							<i class="icon-angle-right"></i>
+						</li>
+						<li><a href="#">Usuário</a></li>
+					</ul>
+					
+					<h:form id="cadastroCliente">
+					
+						<div class="row-fluid">
+							<div class="box span12">
+								<div class="box-header">
+									<h2><i class="halflings-icon picture"></i><span class="break"></span>Dados do Usuário</h2>
+									<div class="box-icon">
+										<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+										<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+										<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+									</div>
+								</div>
+								<br />
+								<h:panelGrid style="text-align:center; align:center; margin-left:300px; width:50%;" columns="6">
+											
+									<p:commandButton value="Anterior"  ajax="false" update="cadastroCliente" styleClass="btn bg-light-blue btn-block" style="width: 100px;"/>			
+										
+									<p:commandButton value="Próximo"   ajax="false" update="cadastroCliente" styleClass="btn bg-light-blue btn-block" style="width: 100px;"/>
+									
+									<p:commandButton value="Salvar"    ajax="false" update="cadastroCliente" styleClass="btn bg-light-blue btn-block" style="width: 100px;"/>
+										
+									<p:commandButton value="Atualizar"  ajax="false" update="cadastroCliente,tblclientes" styleClass="btn bg-light-blue btn-block" style="width: 100px;"/>
+										
+									<p:commandButton value="Limpar" update="cadastroCliente" styleClass="btn bg-light-blue btn-block" style="width: 100px;"
+													immediate="true" process="@this">
+										<pe:resetEditableValues for="cadastroCliente"/>			
+									</p:commandButton>				
+										
+									<p:commandButton value="Listar" styleClass="btn bg-light-blue btn-block" ajax="true" immediate="true" oncomplete="janelaClientes.show()" style="width: 100px;"/>
+													
+								</h:panelGrid>
+								<br />
+								<h:panelGrid columns="2" cellspacing="3">
+									<!-- <p:column>
+										<p:graphicImage 
+														value="/resources/img/avatar.png" 
+														width="200" height="220" cache="false"
+														styleClass="graphicImage"
+														style="margin-left: 10px;"/>
+									</p:column> -->
+									<p:column>
+										<h:panelGrid columns="1">
+											<h:outputText value="ID"/>
+											<p:inputText 
+														styleClass="input-Id">
+												<p:ajax event="blur" update="cadastroCliente"/>		
+											</p:inputText>
+										</h:panelGrid>
+										<h:panelGrid columns="2" cellspacing="3">
+											<h:outputText value="USUÁRIO"/>
+											<h:outputText value="SENHA"/>
+											
+											<p:inputText
+												 styleClass="input-Nome"/>
+											<p:password 
+														 styleClass="input-Nome"/>
+										</h:panelGrid>
+										<h:panelGrid columns="2" cellspacing="3">
+											<h:outputText value="NOME"/>
+											<h:outputText value="SOBRENOME"/>
+											
+											<p:inputText 
+														 styleClass="input-Nome"/>
+											<p:inputText 
+														 styleClass="input-SobreNome">
+											</p:inputText>
+										</h:panelGrid>
+										
+										<h:panelGrid columns="5" cellspacing="3">
+									
+											<h:outputText value="SEXO"/>
+											<h:outputText value="NASCIMENTO"/>
+											<h:outputText value="IDADE"/>
+											<h:outputText value="SITUAÇÃO"/>
+											<h:outputText value="DATA CADASTRO"/>
+											
+											<h:selectOneMenu styleClass="input-SelecOneMenu" style="height: 32px;" 
+													 required="true" requiredMessage="SEXO OBRIGATÓRIO">
+												<f:selectItem itemLabel="SELECIONE"  itemValue=""/>
+												<f:selectItem itemLabel="MASCULINO"         itemValue="M"/>
+												<f:selectItem itemLabel="FEMININO"          itemValue="F"/>
+											</h:selectOneMenu>
+											<p:inputMask 
+														 styleClass="input-Data"
+														 mask="99/99/9999">
+											</p:inputMask>
+											
+											<p:inputText 
+														 styleClass="input-Id"
+														 disabled="true"/>	
+											
+											<h:selectOneMenu styleClass="input-SelecOneMenu" style="height: 32px;">
+												<f:selectItem itemLabel="SELECIONE"   itemValue=""/>
+												<f:selectItem itemLabel="ATIVO"       itemValue="A"/>
+												<f:selectItem itemLabel="INATIVO" 	  itemValue="I"/>
+											</h:selectOneMenu>
+											
+											<p:inputMask 
+														 styleClass="input-Data"
+														 mask="99/99/9999"
+														 disabled="true"/>
+											
+										</h:panelGrid>
+									</p:column>
+								</h:panelGrid>	
+								
+								<h:panelGrid columns="6" cellspacing="3">
+									<h:outputText value="Endereço"/>
+									<h:outputLabel value="Número"/>
+									<h:outputText value="Estado"/>
+									<h:outputText value="Bairro"/>
+									<h:outputText value="Cidade" />
+									<h:outputLabel value="Cep"/>
+									
+									<p:inputText
+												required="true"
+												requiredMessage="ENDEREÇO OBRIGATÓRIO"
+												styleClass="input-Endereco"
+												onkeydown="this.value = this.value.toUpperCase();"/>
+									<p:inputText 
+												 styleClass="input-Numero"/>
+												 
+									<h:selectOneMenu styleClass="input-SelecOneMenu" style="height: 32px;">
+										<f:selectItem itemLabel="Selecione um Estado"  itemValue=""/>
+										<f:selectItem itemLabel="Acre"                 itemValue="AC"/>
+										<f:selectItem itemLabel="Alagoas"              itemValue="AL"/>
+										<f:selectItem itemLabel="Amapá"                itemValue="AP"/>
+										<f:selectItem itemLabel="Amazonas"             itemValue="AM"/>
+										<f:selectItem itemLabel="Bahia"                itemValue="BA"/>
+										<f:selectItem itemLabel="Ceará"                itemValue="CE"/>
+										<f:selectItem itemLabel="Distrito Federal"     itemValue="DF"/>
+										<f:selectItem itemLabel="Espírito Santo"       itemValue="ES"/>
+										<f:selectItem itemLabel="Goias"                itemValue="GO"/>
+										<f:selectItem itemLabel="Maranhão"             itemValue="MA"/>
+										<f:selectItem itemLabel="Mato Grosso"          itemValue="MT"/>
+										<f:selectItem itemLabel="Mato Grosso do Sul"   itemValue="MS"/>
+										<f:selectItem itemLabel="Minas Gerais"         itemValue="MG"/>
+										<f:selectItem itemLabel="Pará"                 itemValue="PA"/>
+										<f:selectItem itemLabel="Paraíba"              itemValue="PB"/>
+										<f:selectItem itemLabel="Maraná"               itemValue="PR"/>
+										<f:selectItem itemLabel="Pernambuco"           itemValue="PE"/>
+										<f:selectItem itemLabel="Piauí"   			   itemValue="PI"/>
+										<f:selectItem itemLabel="Rio de Janeiro" 	   itemValue="RJ"/>
+										<f:selectItem itemLabel="Rio Grande do Norte"  itemValue="RN"/>
+										<f:selectItem itemLabel="Mio Grande do Sul"    itemValue="RS"/>
+										<f:selectItem itemLabel="Rondônia"             itemValue="RO"/>
+										<f:selectItem itemLabel="Roraima"              itemValue="RR"/>
+										<f:selectItem itemLabel="Santa Catarina"       itemValue="SC"/>
+										<f:selectItem itemLabel="São Paulo"            itemValue="SP"/>
+										<f:selectItem itemLabel="Sergipe"              itemValue="SE"/>
+										<f:selectItem itemLabel="Tocantins"            itemValue="TO"/>
+									</h:selectOneMenu>
+									<p:inputText 
+												 styleClass="input-Bairro" 
+												 onkeydown="this.value = this.value.toUpperCase();"/>
+									<p:inputText styleClass="input-Cidade"
+												 required="true"
+												 requiredMessage="CIDADE OBRIGATÓRIO"
+												 onkeydown="this.value = this.value.toUpperCase();"/>
+									<p:inputMask
+												 styleClass="input-Cep"
+												 required="true"
+												 requiredMessage="CEP OBRIGATÓRIO"
+												 mask = "99.999-999"/>
+								</h:panelGrid>
+								
+								<h:panelGrid columns="6" cellspacing="3">
+									<p:column></p:column>
+									<h:outputText value="Telefone"/>
+									<p:column></p:column>
+									
+									<p:column></p:column>
+									<h:outputText value="Celular"/>
+									<p:column></p:column>
+									
+									<div class="input-group-addon">
+			                             <i class="fa fa-phone" style="height: 17px;"></i>
+			                        </div>
+									<p:inputMask
+												mask = "(99)"
+												styleClass="input-DDD"/>
+									<p:inputText
+												styleClass="input-Tel"/>
+									
+									<div class="input-group-addon">
+			                             <i class="fa fa-phone" style="height: 17px;"></i>
+			                        </div>
+									<p:inputMask
+												mask = "(99)"
+												styleClass="input-DDD"/>
+									<p:inputText
+												styleClass="input-Tel"/>
+															
+								</h:panelGrid>
+								<h:panelGrid columns="2" cellspacing="3">										
+									
+									<p:column></p:column>
+									<h:outputText value="Email"/>
+									
+									<div class="input-group-addon">
+			                             <i class="fa fa-laptop" style="height: 17px;"></i>
+			                         </div>
+									<p:inputText 
+												styleClass="input-Email-Site-Face"
+												onkeydown="this.value = this.value.toLowerCase();"/>
+																
+								</h:panelGrid>
+                       		</div>
+                    	</div><!-- /.col -->
+	                </h:form>   
+				</div>	
+			</ui:define>
+	</ui:composition>
+
+</html>

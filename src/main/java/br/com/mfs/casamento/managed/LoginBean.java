@@ -37,7 +37,7 @@ public class LoginBean {
 			this.usuarioSession.setLogin(this.login);
 			this.usuarioSession.setDataLogin(new Date());
 			
-			return "protegido/usuario/system?faces-redirect=true";
+			return "/protegido/usuario/system?faces-redirect=true";
 		
 		} else {
 			
@@ -50,6 +50,32 @@ public class LoginBean {
 		
 		
 	}
+	
+	
+	public String loginMobile() {
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		
+		boolean resultado = usuarioRegras.verificarUsuario(this.login, this.senha);
+		
+		if(resultado){			
+			this.usuarioSession.setLogin(this.login);
+			this.usuarioSession.setDataLogin(new Date());
+			
+			return "/mobile/protegido/usuario/system?faces-redirect=true";
+		
+		} else {
+			
+			FacesMessage mensagem = new FacesMessage("Usuário/Senha invalido");
+			mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);
+			context.addMessage(null, mensagem);
+			
+			return null;
+		}
+		
+		
+	}
+	
 	public String logout() {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 		return "/login?faces-redirect=true";

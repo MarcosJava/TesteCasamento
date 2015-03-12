@@ -15,10 +15,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.mfs.casamento.managed.UsuarioSessionBean;
 
-@WebFilter("/protegido/*")
-public class AutorizacaoFilter implements Filter {
-	
-	@Inject
+/**
+ * Servlet Filter implementation class AutorizacaoMobileFilter
+ */
+@WebFilter("/mobile/*")
+public class AutorizacaoMobileFilter implements Filter {
+
+    /**
+     * Default constructor. 
+     */
+    public AutorizacaoMobileFilter() {
+        // TODO Auto-generated constructor stub
+    }
+
+    @Inject
 	private UsuarioSessionBean usuario;
 
 	@Override
@@ -28,10 +38,10 @@ public class AutorizacaoFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) req;
 		
 		if (!usuario.isLogado()	
-				&& !request.getRequestURI().endsWith("/login.xhtml")
+				&& !request.getRequestURI().endsWith("/mobile/login.xhtml")
 				&& !request.getRequestURI().contains("/javax.faces.resource/")) {
 			
-			response.sendRedirect(request.getContextPath() + "/login.xhtml");
+			response.sendRedirect(request.getContextPath() + "/mobile/login.xhtml");
 			
 		} else {
 			chain.doFilter(req, res);

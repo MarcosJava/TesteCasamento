@@ -20,8 +20,8 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name="Convidados.buscarTodosUsuario", 
 			    query=" select c from Convidados c " +
-			          "join fetch c.localidade " +
-			          "join fetch c.usuario " +
+			          "inner join c.localidade " +
+			          "inner join c.usuario " +
 			          "where c.usuario.login=:login " +
 			          "order by c.nome")
 	

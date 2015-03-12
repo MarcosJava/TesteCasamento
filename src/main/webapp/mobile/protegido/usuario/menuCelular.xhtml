@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile" 
+	xmlns:b="http://bootsfaces.net/ui">
+
+
+<ui:composition>
+
+
+ <h:form id="formMenu">
+ 	<pm:field>
+		<p:menu orientation="horizontal">
+		
+		<p:menuitem value="Home" outcome="system" icon="ui-icon-home"  />
+		
+		<p:menuitem value="Bootstrap" outcome="usuario" icon="ui-icon-home"  rendered="false"/>
+	
+	    <p:submenu label="Localidade" icon="ui-icon-document">
+	      
+	            <p:submenu label="Cadastro">
+	                <p:menuitem value="Localidade" outcome="localidade" />
+	            </p:submenu>
+	    </p:submenu>
+	 
+	    <p:submenu label="Convidados" icon="ui-icon-document">
+	 
+	       
+	            <p:submenu label="Cadastro">
+	                <p:menuitem value="Cadastrar seu convidado" outcome="convidados" />
+	            </p:submenu>
+	            
+	            <p:submenu label="Buscar">
+	                <p:menuitem value="Seus Convidados" outcome="lstMeusConvidados"/>
+	                <p:menuitem value="Todos os Convidados" outcome="lstConvidados" />
+	            </p:submenu>
+	      
+	      
+	    </p:submenu>
+	 
+	   
+	    <p:menuitem value="Logout" action="#{loginBean.logout()}" icon="ui-icon-close"  />
+	</p:menu>
+</pm:field>
+
+</h:form>
+</ui:composition>
+</html>
+

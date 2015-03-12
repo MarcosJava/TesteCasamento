@@ -56,6 +56,9 @@ public class ConvidadosRegra implements Serializable {
 		return convidadosDAO.buscarTodosConvidadosDoCasal(login);
 	}
 	
+	public List<Convidados> buscarTodosDoUsuario(String login) throws NegocioException{
+		return convidadosDAO.buscarTodosDoUsuario(login);
+	}
 	
 	
 }

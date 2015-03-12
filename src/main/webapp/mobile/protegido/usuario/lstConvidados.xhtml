@@ -3,17 +3,21 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:p="http://primefaces.org/ui">
 
-	<ui:composition template="/templates/interno.xhtml">
+	<ui:composition template="/templates/mobile.xhtml">
 	
 			<ui:define name="title">Convidados</ui:define>
 			
 			<ui:define name="body">
 			
-				<h:form id="formDt">
-				<p:dataTable value="#{buscarConvidadosMeusBean.lstConvidados}" 
+				<h:form id="formRel">
+					<h:commandButton action="#{convidadosRelatorioMB.createPDF()}" value="Gerar  Relatorio" ajax="false" onclick="this.form.target='_blank'"/>										
+				</h:form>
+				
+			
+				<h:form id="formInpt">
+				<p:dataTable value="#{buscarConvidadosCasalBean.lstConvidados}" 
 							 var="convidado"
 							 paginator="true"
 							 rows="5" 
@@ -22,7 +26,7 @@
 							 
 							 
 							 <f:facet name="header"> 
-							   Total dos seus convidados:	<h:outputText value="#{buscarConvidadosMeusBean.qtdConvidados}" />
+							   Total de Convidados do Casal:	<h:outputText value="#{buscarConvidadosCasalBean.qtdConvidados}" />
 							 </f:facet>
 							 
 					<p:column filterBy="#{convidado.nome}" headerText="Nome">
@@ -39,16 +43,6 @@
 						 #{convidado.usuario.login}
 					</p:column>
 					
-					<p:column>
-						<p:commandButton value="Excluir" actionListener="#{buscarConvidadosMeusBean.deletar(convidado)}" update=":formDt">	
-							<p:confirm header="Confirmação" message="Deseja deletar o comembro ?" icon="ui-icon-alert"  /> 									 
-						</p:commandButton>
-						
-						<p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
-        				<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" update=":formDt"/>
-        				<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
-    					</p:confirmDialog>
-					</p:column>
 					
 					
 				</p:dataTable>

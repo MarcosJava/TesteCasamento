@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/templates/mobile.xhtml">
+	
+			<ui:define name="title">Convidados</ui:define>
+			
+			<ui:define name="body">
+				
+				
+				
+				<h:form id="formInpt">
+				<p:messages id="msgResposta"/>
+				<h:panelGrid columns="2">
+				
+					<f:facet name="header"> Cadastrar Convidados</f:facet>
+				
+					<p:outputLabel for="nomeConvidado" value="Nome do Convidado" />
+					<p:inputText id="nomeConvidado" 
+					             value="#{cadastrarConvidadoBean.convidados.nome}"  
+					             required="true" 
+					             requiredMessage="Informe o nome do convidado"
+					             maxlength="50"
+					             validatorMessage="Apenas letra sem acentuação">
+					
+						<f:validateRegex pattern="[a-zA-ZÇ ]+" />
+						<p:clientValidator event="keyup" />
+					</p:inputText>					             
+					<p:message for="nomeConvidado" showDetail="true" />
+					<p:outputLabel />
+					
+					
+					<p:outputLabel value="Padrinho" for="padrinho"/>
+					<p:selectOneRadio id="padrinho" 
+					                  value="#{cadastrarConvidadoBean.convidados.padrinho}" 
+					                  required="true" 
+					                  requiredMessage="Necessario escolher uma opção para o padrinho">
+						<f:selectItem itemLabel="Sim" itemValue="s"/>
+						<f:selectItem itemLabel="Não" itemValue="n"/>
+					</p:selectOneRadio>
+					<p:message for="padrinho" />
+					<p:outputLabel />
+					
+					
+					
+					<p:outputLabel for="localidade" value="Localidade" />
+					<p:selectOneMenu id="localidade" 
+					                 value="#{cadastrarConvidadoBean.localidadeSelecionada}" 
+					                 required="true" 
+					                 requiredMessage="Necessario escolher uma localidade">					          
+						<f:selectItem itemLabel="Escolha uma opcao" itemValue="" noSelectionOption="true"/>
+						<f:selectItems value="#{cadastrarConvidadoBean.localidades}" 
+									   var="local" 
+									   itemLabel="#{local.nomeLocalidade}" 
+									   itemValue="#{local.idLocalidade}"  />
+					</p:selectOneMenu>
+					<p:message for="localidade" />
+					<p:outputLabel />
+					
+					
+					
+					<p:commandButton value="Salvar" 
+									 action="#{cadastrarConvidadoBean.salvar}" 
+									 update="formInpt" />
+				</h:panelGrid>
+				</h:form>
+				
+				
+			</ui:define>
+			
+	</ui:composition>
+</html>
