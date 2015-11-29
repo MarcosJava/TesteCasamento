@@ -19,8 +19,7 @@ import javax.persistence.Table;
 @Table(name="convidados")
 @NamedQueries({
 	@NamedQuery(name="Convidados.buscarTodosUsuario", 
-			    query=" select c from Convidados c " +
-			          "inner join c.localidade " +
+			    query=" select c from Convidados c inner join c.localidade " +
 			          "inner join c.usuario " +
 			          "where c.usuario.login=:login " +
 			          "order by c.nome")

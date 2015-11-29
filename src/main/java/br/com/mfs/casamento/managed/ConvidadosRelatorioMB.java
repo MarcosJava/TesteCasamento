@@ -9,7 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
@@ -192,8 +194,13 @@ public class ConvidadosRelatorioMB implements Serializable {
 	 * Getter & Setter
 	 **************************************************************************/
 	public List<Convidados> getLstConvidados() {
-		lstConvidados = convidadosBusiness.buscarTodosDoCasal(usuario.getLogin());
-		lstConvidados.addAll(convidadosBusiness.buscarTodosDoCasal(usuarioBusiness.buscarCasalDoUsuario(usuario).getLogin()));
+		//lstConvidados = convidadosBusiness.buscarTodosDoCasal(usuario.getLogin());
+		//lstConvidados.addAll(convidadosBusiness.buscarTodosDoCasal(usuarioBusiness.buscarCasalDoUsuario(usuario).getLogin()));
+		//Set<Convidados> convidadosSet = new HashSet<>();
+		//convidadosSet = (Set<Convidados>) lstConvidados;
+		//lstConvidados = (List<Convidados>) convidadosSet;
+		String login = usuarioSessionMB.getLogin();
+		lstConvidados = convidadosBusiness.buscarTodosDoCasal(login);
 		Collections.sort(lstConvidados);
 		return lstConvidados;
 	}
